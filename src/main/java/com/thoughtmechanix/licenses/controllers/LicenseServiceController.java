@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RestController
 @RequestMapping(value="v1/organizations/{organizationId}/licenses")
 public class LicenseServiceController {
+
     @Autowired
     private LicenseService licenseService;
 
+    // GET
     @RequestMapping(value="/{licenseId}",method = RequestMethod.GET)
     public License getLicenses( @PathVariable("organizationId") String organizationId,
                                 @PathVariable("licenseId") String licenseId) {
